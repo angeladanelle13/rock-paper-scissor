@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7fb;
+    background-color: #f3f3f3;
+    background-image: radial-gradient(circle at top right, #ffffff, #e6e6e6);
+}
+
+::selection {
+    color: #fff;
+    background-color: grey;
+}
+
+.container {
+    width: 650px;
+    height: 580px;
+    margin: 0 auto;
+    padding: 3rem 5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f8e2d8, #fce8d8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.restart_button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8e2d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.restart_button i {
+    font-size: 20px;
+    color: #333;
+}
+
+.restart_button:active {
+    animation: rotate 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.result_images {
+    display: flex;
+    column-gap: 10rem;
+    justify-content: center;
+}
+
+.container.start .user_result {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .cpu_result {
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+.result_images i {
+    font-size: 100px;
+}
+
+.user_result i {
+    transform: rotate(90deg);
+}
+
+.cpu_result i {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.user_result i.fa-hand-scissors {
+    transform: rotate(-180deg) scaleY(-1);
+}
+
+.cpu_result i.fa-hand-scissors {
+    transform: rotate(-180deg) rotateY(180deg) scaleY(-1);
+}
+
+.result {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    font-weight: bold; 
+    color: #333; 
+}
+
+.result.draw {
+    color: blue;
+}
+
+.result.win {
+    color: green;
+}
+
+.result.lose {
+    color: red;
+}
+
+.option_image i {
+    font-size: 70px;
+}
+
+.option_images {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    justify-content: space-between;
+}
+
+.container.start .option_images {
+    pointer-events: none;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-left: 1rem;
+    margin-right: calc(1in - 70px);
+}
+
+.option_image:last-child {
+    margin-right: 0;
+}
+
+.option_image:hover {
+    opacity: 0.8;
+}
+
+.option_image.active {
+    opacity: 1;
+}
+
+.option_image i {
+    pointer-events: none;
+}
+
+.option_image p {
+    color: #333;
+    font-size: 1.7rem;
+    margin-top: 1.5rem;
+    pointer-events: none;
+}
+
+.score_board {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem; 
+    color: #333; 
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+        font-size: 85%;
+    }
+    .result_images {
+        margin-left: 0;
+        justify-content: center;
+    }
+    .option_images {
+        margin-top: 1.5rem;
+        justify-content: space-around;
+    }
+    .option_image {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    .score {
+        flex-direction: column;
+    }
+    .score_board {
+        font-size: 1.5rem;
+    }
+    .result {
+        font-size: 2rem;
+    }
+    .option_image i {
+        font-size: 50px;
+    }
+    .user_result i,
+    .cpu_result i {
+        font-size: 80px;
+    }
+    .result_images i {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+        font-size: 80%;
+    }
+    .result_images i {
+        font-size: 60px;
+    }
+    .user_result i,
+    .cpu_result i {
+        font-size: 70px;
+    }
+    .result {
+        font-size: 1.8rem;
+    }
+    .option_image i {
+        font-size: 40px;
+    }
+    .score_board {
+        font-size: 1.3rem;
+    }
+}

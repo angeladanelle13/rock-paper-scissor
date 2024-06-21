@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    <body>
+        <section class="container">
+            <div class="restart_button">
+                <i class="fas fa-redo"></i>
+            </div>
+            <div class="score_board">
+                <div class="score">
+                    <span>User: <span id="user-score">0</span></span>
+                    <span>Computer: <span id="cpu-score">0</span></span>
+                </div>
+            </div>
+            <div class="result_field">
+                <div class="result_images">
+                    <span class="user_result">
+                        <i class="fas fa-hand-rock"></i>
+                    </span>
+                    <span class="cpu_result">
+                        <i class="fas fa-hand-rock"></i>
+                    </span>
+                </div>
+                <div class="result">Rock, Paper, Scissors!</div>
+            </div>
+            <div class="option_images">
+                <span class="option_image">
+                    <i class="fas fa-hand-rock"></i>
+                    <p>Rock</p>
+                </span>
+                <span class="option_image">
+                    <i class="fas fa-hand-paper"></i>
+                    <p>Paper</p>
+                </span>
+                <span class="option_image">
+                    <i class="fas fa-hand-scissors" style="transform: rotate(-270deg)"></i>
+                    <p>Scissors</p>
+                </span>
+            </div>
+        </section>
+        <script src="script.js" defer></script>
+    </body>
+</html>
